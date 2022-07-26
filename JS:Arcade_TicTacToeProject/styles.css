@@ -1,0 +1,100 @@
+html {
+    background: url("thunderdome.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    display: flexbox;
+    justify-content: flex;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+.grid-cell {
+    border: 2px solid #000;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.grid-cell:not(.disabled):hover {
+    border-color: red;
+}
+
+.grid-cell:nth-child(-n + 3) {
+    border-top: none;
+}
+
+.grid-cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.grid-cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.grid-cell:nth-last-of-type(-n + 3) {
+    border-bottom: none;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.x::after {
+    content: url('therock.png');
+
+}
+
+.o::after {
+    content: url('kevinhart.png');
+}
+
+button {
+    background-color: rgb(187, 0, 0);
+    color: white;
+    text-align: left;
+    text-decoration: double;
+    display: inline-blßock;
+    font-size: 20px;
+}
+
+.game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: white;
+}
+
+.game-over-text {
+    position: absolute;
+    top: -200px;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    transform: translateX(-30%);
+}
+
+.visible {
+    display: block;
+}
